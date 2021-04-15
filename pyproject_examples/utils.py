@@ -30,8 +30,8 @@ __all__ = ["file_not_found_regex"]
 
 
 def file_not_found_regex(filename: str) -> str:
-	"""
-	Create a regular expression to test :exc:`FileNotFoundError`s.
+	r"""
+	Create a regular expression to test :exc:`FileNotFoundError`\s.
 
 	:param filename: The filename which can't be found.
 	"""
