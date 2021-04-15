@@ -15,8 +15,6 @@ pyproject-examples
 	:stub-columns: 1
 	:widths: 10 90
 
-	* - Docs
-	  - |docs| |docs_check|
 	* - Tests
 	  - |actions_linux| |actions_windows| |actions_macos|
 	* - Activity
@@ -25,14 +23,6 @@ pyproject-examples
 	  - |codefactor| |actions_flake8| |actions_mypy|
 	* - Other
 	  - |license| |language| |requires|
-
-.. |docs| image:: https://img.shields.io/readthedocs/pyproject-examples/latest?logo=read-the-docs
-	:target: https://pyproject-examples.readthedocs.io/en/latest
-	:alt: Documentation Build Status
-
-.. |docs_check| image:: https://github.com/repo-helper/pyproject-examples/workflows/Docs%20Check/badge.svg
-	:target: https://github.com/repo-helper/pyproject-examples/actions?query=workflow%3A%22Docs+Check%22
-	:alt: Docs Check Status
 
 .. |actions_linux| image:: https://github.com/repo-helper/pyproject-examples/workflows/Linux/badge.svg
 	:target: https://github.com/repo-helper/pyproject-examples/actions?query=workflow%3A%22Linux%22

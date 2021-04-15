@@ -11,5 +11,7 @@ license: 'MIT'
 short_desc: 'Example pyproject.toml configs for testing.'
 
 enable_conda: false
+enable_docs: false
 on_pypi: false
 enable_tests: false
+use_whey: true
