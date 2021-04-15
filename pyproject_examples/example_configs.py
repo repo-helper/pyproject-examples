@@ -26,6 +26,25 @@ Example configurations, as strings.
 #  OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
+__all__ = [
+		"MINIMAL_CONFIG",
+		"KEYWORDS",
+		"AUTHORS",
+		"UNICODE",
+		"MAINTAINERS",
+		"CLASSIFIERS",
+		"DEPENDENCIES",
+		"OPTIONAL_DEPENDENCIES",
+		"URLS",
+		"ENTRY_POINTS",
+		"COMPLETE_PROJECT_A",
+		"COMPLETE_A",
+		"COMPLETE_B",
+		"COMPLETE_A_WITH_FILES",
+		"DYNAMIC_REQUIREMENTS",
+		"LONG_REQUIREMENTS",
+		]
+
 MINIMAL_CONFIG = '[project]\nname = "spam"\nversion = "2020.0.0"'
 
 KEYWORDS = f"""\

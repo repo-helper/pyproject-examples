@@ -30,7 +30,7 @@ import re
 
 # 3rd party
 import pytest as pytest
-from coincidence import only_windows
+from coincidence.selectors import not_windows, only_windows
 from dom_toml.parser import BadConfigError
 
 # this package
@@ -49,6 +49,7 @@ from pyproject_examples.example_configs import (
 		UNICODE,
 		URLS
 		)
+from pyproject_examples.utils import file_not_found_regex
 
 __author__: str = "Dominic Davis-Foster"
 __copyright__: str = "2021 Dominic Davis-Foster"
@@ -56,8 +57,12 @@ __license__: str = "MIT License"
 __version__: str = "0.0.0"
 __email__: str = "dominic@davis-foster.co.uk"
 
-# this package
-from pyproject_examples.utils import file_not_found_regex
+__all__ = [
+		"valid_pep621_config",
+		"bad_pep621_config",
+		"valid_buildsystem_config",
+		"bad_buildsystem_config",
+		]
 
 valid_pep621_config = [
 		pytest.param(MINIMAL_CONFIG, id="minimal"),
