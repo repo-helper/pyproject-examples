@@ -1,0 +1,15 @@
+# Configuration for 'repo_helper' (https://github.com/domdfcoding/repo_helper)
+---
+modname: 'pyproject-examples'
+copyright_years: '2021'
+author: 'Dominic Davis-Foster'
+email: 'dominic@davis-foster.co.uk'
+username: 'repo-helper'
+assignee: 'repo-helper'
+version: '0.0.0'
+license: 'MIT'
+short_desc: 'Example pyproject.toml configs for testing.'
+
+enable_conda: false
+on_pypi: false
+enable_tests: false
