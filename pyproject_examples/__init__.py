@@ -211,7 +211,7 @@ bad_buildsystem_config = [
 		pytest.param(
 				'[build-system]\nrequires = "whey"',
 				TypeError,
-				"Invalid type type for 'build-system.requires': expected <class 'collections.abc.Sequence'>, got <class 'str'>",
+				"Invalid type for 'build-system.requires': expected <class 'collections.abc.Sequence'>, got <class 'str'>",
 				id="requires_str"
 				),
 		pytest.param(
@@ -223,7 +223,7 @@ bad_buildsystem_config = [
 		pytest.param(
 				'[build-system]\nrequires = ["whey"]\nbackend-path = "whey"',
 				TypeError,
-				"Invalid type type for 'build-system.backend-path': expected <class 'collections.abc.Sequence'>, got <class 'str'>",
+				"Invalid type for 'build-system.backend-path': expected <class 'collections.abc.Sequence'>, got <class 'str'>",
 				id="backend_path_str"
 				),
 		pytest.param(
