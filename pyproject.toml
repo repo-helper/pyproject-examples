@@ -11,8 +11,8 @@ keywords = []
 dynamic = [ "requires-python", "classifiers", "dependencies",]
 
 [[project.authors]]
-email = "dominic@davis-foster.co.uk"
 name = "Dominic Davis-Foster"
+email = "dominic@davis-foster.co.uk"
 
 
 [project.license]
@@ -22,12 +22,6 @@ file = "LICENSE"
 Homepage = "https://github.com/repo-helper/pyproject-examples"
 "Issue Tracker" = "https://github.com/repo-helper/pyproject-examples/issues"
 "Source Code" = "https://github.com/repo-helper/pyproject-examples"
-
-[tool.mkrecipe]
-conda-channels = [ "repo-helper",]
-extras = "all"
-license-key = "MIT"
-package = "pyproject_examples"
 
 [tool.importcheck]
 
