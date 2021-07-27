@@ -32,3 +32,10 @@ python-implementations = [ "CPython",]
 platforms = [ "Windows", "macOS", "Linux",]
 license-key = "MIT"
 package = "pyproject_examples"
+
+[tool.mypy]
+python_version = "3.6"
+namespace_packages = true
+check_untyped_defs = true
+warn_unused_ignores = true
+no_implicit_optional = true
