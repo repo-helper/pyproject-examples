@@ -35,6 +35,7 @@ __all__ = [
 		"CLASSIFIERS",
 		"DEPENDENCIES",
 		"OPTIONAL_DEPENDENCIES",
+		"OPTIONAL_DEPENDENCIES_EMPTY_GROUP",
 		"URLS",
 		"ENTRY_POINTS",
 		"COMPLETE_PROJECT_A",
@@ -100,6 +101,18 @@ test = [
   "pytest-cov[all]",
   'matplotlib>=3.0.0; platform_machine != "aarch64" or python_version > "3.6"',
 ]
+"""
+
+OPTIONAL_DEPENDENCIES_EMPTY_GROUP = f"""\
+{MINIMAL_CONFIG}
+
+[project.optional-dependencies]
+test = [
+  "pytest < 5.0.0",
+  "pytest-cov[all]",
+  'matplotlib>=3.0.0; platform_machine != "aarch64" or python_version > "3.6"',
+]
+docs = []
 """
 
 URLS = f"""\

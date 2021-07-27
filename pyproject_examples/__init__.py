@@ -46,6 +46,7 @@ from pyproject_examples.example_configs import (
 		MAINTAINERS,
 		MINIMAL_CONFIG,
 		OPTIONAL_DEPENDENCIES,
+		OPTIONAL_DEPENDENCIES_EMPTY_GROUP,
 		UNICODE,
 		URLS
 		)
@@ -75,6 +76,7 @@ valid_pep621_config = [
 		pytest.param(CLASSIFIERS, id="classifiers"),
 		pytest.param(DEPENDENCIES, id="dependencies"),
 		pytest.param(OPTIONAL_DEPENDENCIES, id="optional-dependencies"),
+		pytest.param(OPTIONAL_DEPENDENCIES_EMPTY_GROUP, id="optional-dependencies-empty-group"),
 		pytest.param(URLS, id="urls"),
 		pytest.param(ENTRY_POINTS, id="entry_points"),
 		pytest.param(UNICODE, id="unicode"),
