@@ -4,6 +4,11 @@ name: Linux
 
 on:
   push:
+    branches-ignore:
+      - 'repo-helper-update'
+      - 'pre-commit-ci-update-config'
+    tags:
+      - '*'
   pull_request:
 
 permissions:
