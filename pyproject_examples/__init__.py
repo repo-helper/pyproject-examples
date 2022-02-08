@@ -180,6 +180,12 @@ bad_pep621_config = [
 				id="missing_license_file_win32",
 				marks=only_windows("Message differs on Windows.")
 				),
+		pytest.param(
+				f"{MINIMAL_CONFIG}\n[project.urls]\na_really_long_label_which_exceeds_32_characters = 'example.com'",
+				ValueError,
+				r"'project.urls.a_really_long_label_which_exceeds_32_characters': label too long \(max 32 characters\)",
+				id="label_too_long",
+				),
 		]
 
 valid_buildsystem_config = [
