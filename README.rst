@@ -8,6 +8,10 @@ pyproject-examples
 
 .. end short_desc
 
+These are designed to be used in the testsuite for
+`pyproject-parser <https://github.com/repo-helper/pyproject-parser>`_
+and `whey <https://github.com/repo-helper/whey>`_,
+but may be useful for other tools based on those.
 
 .. start shields
 
