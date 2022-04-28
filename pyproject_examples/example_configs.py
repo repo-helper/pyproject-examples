@@ -348,7 +348,8 @@ name = "Whey"
 version = "2021.0.0"
 description = "A simple Python wheel builder for simple projects."
 readme = "README.rst"
-dynamic = [ "classifiers", "requires-python",]
+dynamic = [ "classifiers", ]
+requires-python = ">=3.6.1"
 dependencies = [
   "httpx",
   "gidgethub[httpx]>4.0.0",
