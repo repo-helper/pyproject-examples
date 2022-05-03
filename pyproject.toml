@@ -24,6 +24,7 @@ Homepage = "https://github.com/repo-helper/pyproject-examples"
 "Source Code" = "https://github.com/repo-helper/pyproject-examples"
 
 [tool.importcheck]
+always = [ "pyproject_examples.example_configs", "pyproject_examples", "pyproject_examples.utils",]
 
 [tool.whey]
 base-classifiers = [ "Typing :: Typed",]
