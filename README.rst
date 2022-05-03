@@ -21,8 +21,10 @@ but may be useful for other tools based on those.
 
 	* - Tests
 	  - |actions_linux| |actions_windows| |actions_macos|
+	* - PyPI
+	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
 	* - Activity
-	  - |commits-latest| |commits-since| |maintained|
+	  - |commits-latest| |commits-since| |maintained| |pypi-downloads|
 	* - QA
 	  - |codefactor| |actions_flake8| |actions_mypy|
 	* - Other
@@ -56,6 +58,22 @@ but may be useful for other tools based on those.
 	:target: https://www.codefactor.io/repository/github/repo-helper/pyproject-examples
 	:alt: CodeFactor Grade
 
+.. |pypi-version| image:: https://img.shields.io/pypi/v/pyproject-examples
+	:target: https://pypi.org/project/pyproject-examples/
+	:alt: PyPI - Package Version
+
+.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/pyproject-examples?logo=python&logoColor=white
+	:target: https://pypi.org/project/pyproject-examples/
+	:alt: PyPI - Supported Python Versions
+
+.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/pyproject-examples
+	:target: https://pypi.org/project/pyproject-examples/
+	:alt: PyPI - Supported Implementations
+
+.. |wheel| image:: https://img.shields.io/pypi/wheel/pyproject-examples
+	:target: https://pypi.org/project/pyproject-examples/
+	:alt: PyPI - Wheel
+
 .. |license| image:: https://img.shields.io/github/license/repo-helper/pyproject-examples
 	:target: https://github.com/repo-helper/pyproject-examples/blob/master/LICENSE
 	:alt: License
@@ -74,6 +92,10 @@ but may be useful for other tools based on those.
 .. |maintained| image:: https://img.shields.io/maintenance/yes/2022
 	:alt: Maintenance
 
+.. |pypi-downloads| image:: https://img.shields.io/pypi/dm/pyproject-examples
+	:target: https://pypi.org/project/pyproject-examples/
+	:alt: PyPI - Downloads
+
 .. end shields
 
 Installation
@@ -81,13 +103,13 @@ Installation
 
 .. start installation
 
-``pyproject-examples`` can be installed from GitHub.
+``pyproject-examples`` can be installed from PyPI.
 
 To install with ``pip``:
 
 .. code-block:: bash
 
-	$ python -m pip install git+https://github.com/repo-helper/pyproject-examples
+	$ python -m pip install pyproject-examples
 
 .. end installation
 
@@ -119,7 +141,7 @@ Each param has its own unique ID, which can be seen in the source
 A list of `pytest params`_ for invalid ``pyproject.toml`` files per `PEP 621`_.
 Each param contains the ``pyproject.toml`` content (as a string),
 the expected Python exception (for catching with `pytest.raises`_), and the expected exception text (for passing as the ``match`` argument to ``pytest.raises``.
-Each param also has its own unique ID, which can be seen in the source `here <https://github.com/repo-helper/pyproject-examples/blob/master/pyproject_examples/__init__.py#L88>`_
+Each param also has its own unique ID, which can be seen in the source `here <https://github.com/repo-helper/pyproject-examples/blob/master/pyproject_examples/__init__.py#L88>`__.
 
 .. _pytest.raises: https://docs.pytest.org/en/6.2.x/reference.html#pytest.raises
 
