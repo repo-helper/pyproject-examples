@@ -6,7 +6,7 @@ author: 'Dominic Davis-Foster'
 email: 'dominic@davis-foster.co.uk'
 username: 'repo-helper'
 assignee: 'domdfcoding'
-version: '0.0.0'
+version: '2022.5.3'
 license: 'MIT'
 short_desc: 'Example pyproject.toml configs for testing.'
 

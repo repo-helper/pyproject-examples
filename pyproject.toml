@@ -4,7 +4,7 @@ build-backend = "whey"
 
 [project]
 name = "pyproject-examples"
-version = "0.0.0"
+version = "2022.5.3"
 description = "Example pyproject.toml configs for testing."
 readme = "README.rst"
 keywords = []
