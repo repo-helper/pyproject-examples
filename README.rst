@@ -107,7 +107,7 @@ Usage
 A list of `pytest params`_ for valid ``pyproject.toml`` files per `PEP 621`_.
 The params contain the ``pyproject.toml`` content as a string.
 Each param has its own unique ID, which can be seen in the source
-`here <https://github.com/repo-helper/pyproject-examples/blob/master/pyproject_examples/__init__.py#L68>`_.
+`here <https://github.com/repo-helper/pyproject-examples/blob/master/pyproject_examples/__init__.py#L68>`__.
 
 .. _pytest params: https://docs.pytest.org/en/6.2.x/reference.html#pytest-param:
 .. _PEP 621: https://peps.python.org/pep-0621/
@@ -130,19 +130,19 @@ Each param also has its own unique ID, which can be seen in the source `here <ht
 A list of `pytest params`_ for valid ``[build-system]`` tables from ``pyproject.toml`` files per `PEP 517`_ and `PEP 517`_.
 The params contain the ``pyproject.toml`` content as a string.
 Each param has its own unique ID, which can be seen in the source
-`here <https://github.com/repo-helper/pyproject-examples/blob/master/pyproject_examples/__init__.py#L191>`_.
+`here <https://github.com/repo-helper/pyproject-examples/blob/master/pyproject_examples/__init__.py#L191>`__.
 
 .. _PEP 517: https://peps.python.org/pep-0517/
 .. _PEP 518: https://peps.python.org/pep-0518/
 
 
 ``bad_buildsystem_config``
-*************************
+****************************
 
 A list of `pytest params`_ for invalid ``[build-system]`` tables from ``pyproject.toml`` files per `PEP 517`_ and `PEP 517`_.
 Each param contains the ``pyproject.toml`` content (as a string),
 the expected Python exception (for catching with `pytest.raises`_), and the expected exception text (for passing as the ``match`` argument to ``pytest.raises``.
-Each param also has its own unique ID, which can be seen in the source `here <https://github.com/repo-helper/pyproject-examples/blob/master/pyproject_examples/__init__.py#206>`_
+Each param also has its own unique ID, which can be seen in the source `here <https://github.com/repo-helper/pyproject-examples/blob/master/pyproject_examples/__init__.py#206>`__.
 
 
 ``pyproject_examples.example_configs`` submodule
