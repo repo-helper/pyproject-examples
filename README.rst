@@ -90,3 +90,98 @@ To install with ``pip``:
 	$ python -m pip install git+https://github.com/repo-helper/pyproject-examples
 
 .. end installation
+
+
+Usage
+--------
+
+``pyproject-examples`` provides the following API:
+
+
+``pyproject_examples`` module
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+``valid_pep621_config``
+*************************
+
+A list of `pytest params`_ for valid ``pyproject.toml`` files per `PEP 621`_.
+The params contain the ``pyproject.toml`` content as a string.
+Each param has its own unique ID, which can be seen in the source
+`here <https://github.com/repo-helper/pyproject-examples/blob/master/pyproject_examples/__init__.py#L68>`_.
+
+.. _pytest params: https://docs.pytest.org/en/6.2.x/reference.html#pytest-param:
+.. _PEP 621: https://peps.python.org/pep-0621/
+
+
+``bad_pep621_config``
+*************************
+
+A list of `pytest params`_ for invalid ``pyproject.toml`` files per `PEP 621`_.
+Each param contains the ``pyproject.toml`` content (as a string),
+the expected Python exception (for catching with `pytest.raises`_), and the expected exception text (for passing as the ``match`` argument to ``pytest.raises``.
+Each param also has its own unique ID, which can be seen in the source `here <https://github.com/repo-helper/pyproject-examples/blob/master/pyproject_examples/__init__.py#L88>`_
+
+.. _pytest.raises: https://docs.pytest.org/en/6.2.x/reference.html#pytest.raises
+
+
+``valid_buildsystem_config``
+*******************************
+
+A list of `pytest params`_ for valid ``[build-system]`` tables from ``pyproject.toml`` files per `PEP 517`_ and `PEP 517`_.
+The params contain the ``pyproject.toml`` content as a string.
+Each param has its own unique ID, which can be seen in the source
+`here <https://github.com/repo-helper/pyproject-examples/blob/master/pyproject_examples/__init__.py#L191>`_.
+
+.. _PEP 517: https://peps.python.org/pep-0517/
+.. _PEP 518: https://peps.python.org/pep-0518/
+
+
+``bad_buildsystem_config``
+*************************
+
+A list of `pytest params`_ for invalid ``[build-system]`` tables from ``pyproject.toml`` files per `PEP 517`_ and `PEP 517`_.
+Each param contains the ``pyproject.toml`` content (as a string),
+the expected Python exception (for catching with `pytest.raises`_), and the expected exception text (for passing as the ``match`` argument to ``pytest.raises``.
+Each param also has its own unique ID, which can be seen in the source `here <https://github.com/repo-helper/pyproject-examples/blob/master/pyproject_examples/__init__.py#206>`_
+
+
+``pyproject_examples.example_configs`` submodule
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This module contains the example configuration files themselves.
+Each file is stored as a string.
+
+The configuration files are:
+
+* ``MINIMAL_CONFIG``
+* ``KEYWORDS``
+* ``AUTHORS``
+* ``UNICODE``
+* ``MAINTAINERS``
+* ``CLASSIFIERS``
+* ``DEPENDENCIES``
+* ``OPTIONAL_DEPENDENCIES``
+* ``OPTIONAL_DEPENDENCIES_EMPTY_GROUP``
+* ``URLS``
+* ``ENTRY_POINTS``
+* ``COMPLETE_PROJECT_A``
+* ``COMPLETE_A``
+* ``COMPLETE_B``
+* ``COMPLETE_A_WITH_FILES``
+* ``DYNAMIC_REQUIREMENTS``
+* ``LONG_REQUIREMENTS``
+
+
+``pyproject_examples.utils`` submodule
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This module contains utility functions.
+
+``file_not_found_regex(filename: str) -> str``
+************************************************
+
+This function create a regular expression for testing ``FileNotFoundError``\s.
+
+This is useful for testing error messages between Windows and POSIX, as well as between CPython and PyPy.
+
+**filename** The filename which can't be found.

@@ -15,3 +15,4 @@ enable_docs: false
 on_pypi: false
 enable_tests: false
 use_whey: true
+pre_commit_exclude: "^README.rst$"
