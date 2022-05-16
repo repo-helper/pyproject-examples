@@ -32,6 +32,9 @@ import re
 import pytest as pytest
 from coincidence.selectors import not_windows, only_windows
 from dom_toml.parser import BadConfigError
+from packaging.requirements import InvalidRequirement
+from packaging.specifiers import InvalidSpecifier
+from packaging.version import InvalidVersion
 
 # this package
 from pyproject_examples.example_configs import (
@@ -107,18 +110,18 @@ bad_pep621_config = [
 		pytest.param(
 				'[project]\nname = "???????12345=============☃"\nversion = "2020.0.0"',
 				BadConfigError,
-				"The value for 'project.name' is invalid.",
+				re.escape("The value '???????12345=============☃' for 'project.name' is invalid."),
 				id="bad_name"
 				),
 		pytest.param(
 				'[project]\nname = "spam"\nversion = "???????12345=============☃"',
-				BadConfigError,
+				InvalidVersion,
 				re.escape("Invalid version: '???????12345=============☃'"),
 				id="bad_version"
 				),
 		pytest.param(
 				f'{MINIMAL_CONFIG}\nrequires-python = "???????12345=============☃"',
-				BadConfigError,
+				InvalidSpecifier,
 				re.escape("Invalid specifier: '???????12345=============☃'"),
 				id="bad_requires_python"
 				),
@@ -151,6 +154,12 @@ bad_pep621_config = [
 				TypeError,
 				r"Invalid type for 'project.dependencies\[0\]': expected <class 'str'>, got <class 'int'>",
 				id="dependencies_wrong_type"
+				),
+		pytest.param(
+				f'{MINIMAL_CONFIG}\ndependencies = ["foo]]]"]',
+				InvalidRequirement,
+				r"'foo]]]'\n    Parse error at \"']]]'\": Expected string_end",
+				id="dependencies_invalid_requirement"
 				),
 		pytest.param(
 				f'{MINIMAL_CONFIG}\nreadme = "README.rst"',
@@ -221,6 +230,12 @@ bad_buildsystem_config = [
 				TypeError,
 				"Invalid type for 'build-system.requires': expected <class 'collections.abc.Sequence'>, got <class 'str'>",
 				id="requires_str"
+				),
+		pytest.param(
+				'[build-system]\nrequires = ["foo]]]"]',
+				InvalidRequirement,
+				r"'foo]]]'\n    Parse error at \"']]]'\": Expected string_end",
+				id="requires_invalid_requirement"
 				),
 		pytest.param(
 				'[build-system]\nrequires = ["whey"]\nbackend-path = [1234]',
