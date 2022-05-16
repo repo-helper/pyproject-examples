@@ -1,3 +1,4 @@
 coincidence>=0.4.0
 dom-toml>=0.4.0
+packaging>=21.3
 pytest>=6.2.3
