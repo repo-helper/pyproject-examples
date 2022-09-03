@@ -50,8 +50,8 @@ but may be useful for other tools based on those.
 	:target: https://github.com/repo-helper/pyproject-examples/actions?query=workflow%3A%22mypy%22
 	:alt: mypy status
 
-.. |requires| image:: https://dependency-dash.herokuapp.com/github/repo-helper/pyproject-examples/badge.svg
-	:target: https://dependency-dash.herokuapp.com/github/repo-helper/pyproject-examples/
+.. |requires| image:: https://dependency-dash.repo-helper.uk/github/repo-helper/pyproject-examples/badge.svg
+	:target: https://dependency-dash.repo-helper.uk/github/repo-helper/pyproject-examples/
 	:alt: Requirements Status
 
 .. |codefactor| image:: https://img.shields.io/codefactor/grade/github/repo-helper/pyproject-examples?logo=codefactor
