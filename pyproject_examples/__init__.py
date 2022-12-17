@@ -158,7 +158,7 @@ bad_pep621_config = [
 		pytest.param(
 				f'{MINIMAL_CONFIG}\ndependencies = ["foo]]]"]',
 				InvalidRequirement,
-				r"'foo]]]'\n    Parse error at \"']]]'\": Expected string_end",
+				r"'foo]]]'\n    Expected end or semicolon \(after name and no valid version specifier\)\n    foo]]]\n       \^",
 				id="dependencies_invalid_requirement"
 				),
 		pytest.param(
