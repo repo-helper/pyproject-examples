@@ -28,14 +28,14 @@ always = [ "pyproject_examples.example_configs", "pyproject_examples", "pyprojec
 
 [tool.whey]
 base-classifiers = [ "Typing :: Typed",]
-python-versions = [ "3.6",]
+python-versions = [ "3.8",]
 python-implementations = [ "CPython",]
 platforms = [ "Windows", "macOS", "Linux",]
 license-key = "MIT"
 package = "pyproject_examples"
 
 [tool.mypy]
-python_version = "3.6"
+python_version = "3.8"
 namespace_packages = true
 check_untyped_defs = true
 warn_unused_ignores = true
