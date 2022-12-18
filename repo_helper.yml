@@ -15,3 +15,4 @@ enable_docs: false
 enable_tests: false
 use_whey: true
 pre_commit_exclude: "^README.rst$"
+requires_python: "3.6"
