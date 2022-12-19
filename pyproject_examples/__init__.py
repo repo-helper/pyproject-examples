@@ -27,6 +27,7 @@ Example pyproject.toml configs for testing.
 #  OR OTHER DEALINGS IN THE SOFTWARE.
 #
 import re
+import sys
 
 # 3rd party
 import pytest as pytest
@@ -159,7 +160,15 @@ bad_pep621_config = [
 				f'{MINIMAL_CONFIG}\ndependencies = ["foo]]]"]',
 				InvalidRequirement,
 				r"'foo]]]'\n    Expected end or semicolon \(after name and no valid version specifier\)\n    foo]]]\n       \^",
-				id="dependencies_invalid_requirement"
+				id="dependencies_invalid_requirement",
+				marks=pytest.mark.skipif(sys.version_info < (3, 7), reason="Error differs on 3.6"),
+				),
+		pytest.param(
+				f'{MINIMAL_CONFIG}\ndependencies = ["foo]]]"]',
+				InvalidRequirement,
+				r"'foo]]]'\n    Parse error at \"']]]'\": Expected string_end",
+				id="dependencies_invalid_requirement",
+				marks=pytest.mark.skipif(sys.version_info >= (3, 7), reason="Error differs on 3.6"),
 				),
 		pytest.param(
 				f'{MINIMAL_CONFIG}\nreadme = "README.rst"',
