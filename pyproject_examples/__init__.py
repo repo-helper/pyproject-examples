@@ -243,8 +243,16 @@ bad_buildsystem_config = [
 		pytest.param(
 				'[build-system]\nrequires = ["foo]]]"]',
 				InvalidRequirement,
+				r"'foo]]]'\n    Expected end or semicolon \(after name and no valid version specifier\)\n    foo]]]\n       \^",
+				id="requires_invalid_requirement",
+				marks=pytest.mark.skipif(sys.version_info < (3, 7), reason="Error differs on 3.6"),
+				),
+		pytest.param(
+				'[build-system]\nrequires = ["foo]]]"]',
+				InvalidRequirement,
 				r"'foo]]]'\n    Parse error at \"']]]'\": Expected string_end",
-				id="requires_invalid_requirement"
+				id="requires_invalid_requirement",
+				marks=pytest.mark.skipif(sys.version_info >= (3, 7), reason="Error differs on 3.6"),
 				),
 		pytest.param(
 				'[build-system]\nrequires = ["whey"]\nbackend-path = [1234]',
