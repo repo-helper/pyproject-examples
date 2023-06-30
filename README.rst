@@ -81,7 +81,7 @@ but may be useful for other tools based on those.
 .. |language| image:: https://img.shields.io/github/languages/top/repo-helper/pyproject-examples
 	:alt: GitHub top language
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/repo-helper/pyproject-examples/v2022.5.18
+.. |commits-since| image:: https://img.shields.io/github/commits-since/repo-helper/pyproject-examples/v2023.6.30
 	:target: https://github.com/repo-helper/pyproject-examples/pulse
 	:alt: GitHub commits since tagged version
 
