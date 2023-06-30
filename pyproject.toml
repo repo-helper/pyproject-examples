@@ -7,9 +7,8 @@ name = "pyproject-examples"
 version = "2023.6.30"
 description = "Example pyproject.toml configs for testing."
 readme = "README.rst"
-requires-python = ">=3.6"
 keywords = []
-dynamic = [ "classifiers", "dependencies",]
+dynamic = [ "requires-python", "classifiers", "dependencies",]
 
 [[project.authors]]
 name = "Dominic Davis-Foster"
@@ -29,8 +28,8 @@ always = [ "pyproject_examples.example_configs", "pyproject_examples", "pyprojec
 
 [tool.whey]
 base-classifiers = [ "Typing :: Typed",]
-python-versions = [ "3.8",]
-python-implementations = [ "CPython",]
+python-versions = [ "3.6", "3.7", "3.8", "3.9", "3.10", "3.11",]
+python-implementations = [ "CPython", "PyPy",]
 platforms = [ "Windows", "macOS", "Linux",]
 license-key = "MIT"
 package = "pyproject_examples"
