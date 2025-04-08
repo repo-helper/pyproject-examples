@@ -27,7 +27,7 @@ always = [ "pyproject_examples.example_configs", "pyproject_examples", "pyprojec
 
 [tool.whey]
 base-classifiers = [ "Typing :: Typed",]
-python-versions = [ "3.6", "3.7", "3.8", "3.9", "3.10", "3.11",]
+python-versions = [ "3.7", "3.8", "3.9", "3.10", "3.11", "3.12",]
 python-implementations = [ "CPython", "PyPy",]
 platforms = [ "Windows", "macOS", "Linux",]
 license-key = "MIT"

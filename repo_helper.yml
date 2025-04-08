@@ -17,14 +17,12 @@ use_whey: true
 pre_commit_exclude: "^README.rst$"
 
 python_versions:
-  - 3.6
   - 3.7
   - 3.8
   - 3.9
   - "3.10"
   - "3.11"
-  - "3.12-dev"
-  - pypy36
+  - "3.12"
   - pypy37
   - pypy38
   - pypy39
