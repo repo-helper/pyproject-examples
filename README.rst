@@ -93,7 +93,7 @@ but may be useful for other tools based on those.
 	:alt: Maintenance
 
 .. |pypi-downloads| image:: https://img.shields.io/pypi/dm/pyproject-examples
-	:target: https://pypi.org/project/pyproject-examples/
+	:target: https://pypistats.org/packages/pyproject-examples
 	:alt: PyPI - Downloads
 
 .. end shields
