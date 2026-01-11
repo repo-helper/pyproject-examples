@@ -100,61 +100,61 @@ bad_pep621_config = [
 				'[project]\n\nversion = "2020.0.0"',
 				BadConfigError,
 				"The 'project.name' field must be provided.",
-				id="no_name"
+				id="no_name",
 				),
 		pytest.param(
 				'[project]\ndynamic = ["name"]',
 				BadConfigError,
 				"The 'project.name' field may not be dynamic.",
-				id="dynamic_name"
+				id="dynamic_name",
 				),
 		pytest.param(
 				'[project]\nname = "???????12345=============☃"\nversion = "2020.0.0"',
 				BadConfigError,
 				re.escape("The value '???????12345=============☃' for 'project.name' is invalid."),
-				id="bad_name"
+				id="bad_name",
 				),
 		pytest.param(
 				'[project]\nname = "spam"\nversion = "???????12345=============☃"',
 				InvalidVersion,
 				re.escape("Invalid version: '???????12345=============☃'"),
-				id="bad_version"
+				id="bad_version",
 				),
 		pytest.param(
 				f'{MINIMAL_CONFIG}\nrequires-python = "???????12345=============☃"',
 				InvalidSpecifier,
 				re.escape("Invalid specifier: '???????12345=============☃'"),
-				id="bad_requires_python"
+				id="bad_requires_python",
 				),
 		pytest.param(
 				f'{MINIMAL_CONFIG}\nauthors = [{{name = "Bob, Alice"}}]',
 				BadConfigError,
 				r"The 'project.authors\[0\].name' key cannot contain commas.",
-				id="author_comma"
+				id="author_comma",
 				),
 		pytest.param(
 				f'{MINIMAL_CONFIG}\nmaintainers = [{{name = "Bob, Alice"}}]',
 				BadConfigError,
 				r"The 'project.maintainers\[0\].name' key cannot contain commas.",
-				id="maintainer_comma"
+				id="maintainer_comma",
 				),
 		pytest.param(
 				f'{MINIMAL_CONFIG}\nkeywords = [1, 2, 3, 4, 5]',
 				TypeError,
 				r"Invalid type for 'project.keywords\[0\]': expected <class 'str'>, got <class 'int'>",
-				id="keywords_wrong_type"
+				id="keywords_wrong_type",
 				),
 		pytest.param(
 				f'{MINIMAL_CONFIG}\nclassifiers = [1, 2, 3, 4, 5]',
 				TypeError,
 				r"Invalid type for 'project.classifiers\[0\]': expected <class 'str'>, got <class 'int'>",
-				id="classifiers_wrong_type"
+				id="classifiers_wrong_type",
 				),
 		pytest.param(
 				f'{MINIMAL_CONFIG}\ndependencies = [1, 2, 3, 4, 5]',
 				TypeError,
 				r"Invalid type for 'project.dependencies\[0\]': expected <class 'str'>, got <class 'int'>",
-				id="dependencies_wrong_type"
+				id="dependencies_wrong_type",
 				),
 		pytest.param(
 				f'{MINIMAL_CONFIG}\ndependencies = ["foo]]]"]',
@@ -175,28 +175,28 @@ bad_pep621_config = [
 				FileNotFoundError,
 				r"No such file or directory: ((Windows|Posix)Path(Plus)?\('README.rst'\)|'README.rst')",
 				id="missing_readme_file",
-				marks=not_windows("Message differs on Windows.")
+				marks=not_windows("Message differs on Windows."),
 				),
 		pytest.param(
 				f'{MINIMAL_CONFIG}\nlicense = {{file = "LICENSE.txt"}}',
 				FileNotFoundError,
 				r"No such file or directory: ((Windows|Posix)Path(Plus)?\('LICENSE.txt'\)|'LICENSE.txt')",
 				id="missing_license_file",
-				marks=not_windows("Message differs on Windows.")
+				marks=not_windows("Message differs on Windows."),
 				),
 		pytest.param(
 				f'{MINIMAL_CONFIG}\nreadme = "README.rst"',
 				FileNotFoundError,
 				file_not_found_regex("README.rst"),
 				id="missing_readme_file_win32",
-				marks=only_windows("Message differs on Windows.")
+				marks=only_windows("Message differs on Windows."),
 				),
 		pytest.param(
 				f'{MINIMAL_CONFIG}\nlicense = {{file = "LICENSE.txt"}}',
 				FileNotFoundError,
 				file_not_found_regex("LICENSE.txt"),
 				id="missing_license_file_win32",
-				marks=only_windows("Message differs on Windows.")
+				marks=only_windows("Message differs on Windows."),
 				),
 		pytest.param(
 				f"{MINIMAL_CONFIG}\n[project.urls]\na_really_long_label_which_exceeds_32_characters = 'example.com'",
@@ -213,11 +213,11 @@ valid_buildsystem_config = [
 		pytest.param('[build-system]\nrequires = ["whey"]\nbuild-backend = "whey"', id="complete"),
 		pytest.param(
 				'[build-system]\nrequires = ["whey"]\nbuild-backend = "whey"\nbackend-path = ["../foo"]',
-				id="backend_path"
+				id="backend_path",
 				),
 		pytest.param(
 				'[build-system]\nrequires = ["whey"]\nbuild-backend = "whey"\nbackend-path = ["../foo", "./bar"]',
-				id="backend_paths"
+				id="backend_paths",
 				),
 		]
 
@@ -226,19 +226,19 @@ bad_buildsystem_config = [
 				'[build-system]\nbackend-path = ["./foo"]',
 				BadConfigError,
 				"The 'build-system.requires' field must be provided.",
-				id="no_requires"
+				id="no_requires",
 				),
 		pytest.param(
 				'[build-system]\nrequires = [1234]',
 				TypeError,
 				r"Invalid type for 'build-system.requires\[0\]': expected <class 'str'>, got <class 'int'>",
-				id="requires_list_int"
+				id="requires_list_int",
 				),
 		pytest.param(
 				'[build-system]\nrequires = "whey"',
 				TypeError,
 				"Invalid type for 'build-system.requires': expected <class 'collections.abc.Sequence'>, got <class 'str'>",
-				id="requires_str"
+				id="requires_str",
 				),
 		pytest.param(
 				'[build-system]\nrequires = ["foo]]]"]',
@@ -258,18 +258,18 @@ bad_buildsystem_config = [
 				'[build-system]\nrequires = ["whey"]\nbackend-path = [1234]',
 				TypeError,
 				r"Invalid type for 'build-system.backend-path\[0\]': expected <class 'str'>, got <class 'int'>",
-				id="backend_path_list_int"
+				id="backend_path_list_int",
 				),
 		pytest.param(
 				'[build-system]\nrequires = ["whey"]\nbackend-path = "whey"',
 				TypeError,
 				"Invalid type for 'build-system.backend-path': expected <class 'collections.abc.Sequence'>, got <class 'str'>",
-				id="backend_path_str"
+				id="backend_path_str",
 				),
 		pytest.param(
 				'[build-system]\nrequires = ["whey"]\nbackend-path = ["whey"]',
 				BadConfigError,
 				"'build-system.backend-path' cannot be specified without also specifying 'build-system.build-backend'",
-				id="backend_path_without_backend"
+				id="backend_path_without_backend",
 				),
 		]
