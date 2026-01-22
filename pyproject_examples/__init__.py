@@ -159,7 +159,7 @@ bad_pep621_config = [
 		pytest.param(
 				f'{MINIMAL_CONFIG}\ndependencies = ["foo]]]"]',
 				InvalidRequirement,
-				r"'foo]]]'\n    Expected end or semicolon \(after name and no valid version specifier\)\n    foo]]]\n       \^",
+				r"'foo]]]'\n    Expected (end or )?semicolon \(after name (and|with) no (valid )?version specifier\)( or end)?\n    foo]]]\n       \^",
 				id="dependencies_invalid_requirement",
 				marks=pytest.mark.skipif(sys.version_info < (3, 7), reason="Error differs on 3.6"),
 				),
@@ -243,7 +243,7 @@ bad_buildsystem_config = [
 		pytest.param(
 				'[build-system]\nrequires = ["foo]]]"]',
 				InvalidRequirement,
-				r"'foo]]]'\n    Expected end or semicolon \(after name and no valid version specifier\)\n    foo]]]\n       \^",
+				r"'foo]]]'\n    Expected (end or )?semicolon \(after name (and|with) no (valid )?version specifier\)( or end)?\n    foo]]]\n       \^",
 				id="requires_invalid_requirement",
 				marks=pytest.mark.skipif(sys.version_info < (3, 7), reason="Error differs on 3.6"),
 				),
